@@ -26,6 +26,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
+        git config --global user.email "akwaed@gmail.com"
+        git config --global user.name "akwaed"
         git add -A
         git commit -m "Update CSV files"
         git push https://$GH_TOKEN@github.com/akwaed/gas_prices.git HEAD:main
