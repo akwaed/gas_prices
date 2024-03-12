@@ -1,0 +1,24 @@
+name: Gas Price Update
+
+on:
+  schedule:
+    - cron: '30 14,21 * * *'  # Runs at 10:30 AM and 5:00 PM EST every day
+
+jobs:
+  update_prices:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run script
+      run: python main.py  # Replace with your actual script name
