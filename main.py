@@ -68,11 +68,13 @@ def update_logger_csv(data):
 URL = "https://www.gasbuddy.com/station/87143"
 station_data = fetch_station_data(URL)
 
+URL2 = "https://www.gasbuddy.com/station/15371"
+station_data2 = fetch_station_data(URL2)
 
-if station_data:
+if station_data and station_data2:
     thortons = station_data['Station:87143']
     speedway = station_data['Station:17220']
-    sams_club = station_data['Station:15371']
+    sams_club = station_data2['Station:15371']
     # Update the station info CSV and logger CSV for both stations
     update_station_info_csv(thortons)
     update_logger_csv(thortons)
