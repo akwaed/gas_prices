@@ -71,6 +71,11 @@ station_data = fetch_station_data(url)
 
 if station_data:
     thortons = station_data['Station:87143']
+    speedway = station_data['Station:17220']
+    
+    # Update the station info CSV and logger CSV for both stations
     update_station_info_csv(thortons)
     update_logger_csv(thortons)
+    update_station_info_csv(speedway)
+    update_logger_csv(speedway)
     print("Data updated successfully.")
