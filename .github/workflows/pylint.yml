@@ -24,12 +24,13 @@ jobs:
         python main.py
     - name: update the updated Data csv file
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.email "akwaed@gmail.com"
         git config --global user.name "github-actions[bot]"
         git add -A
         git commit -m "Updated data.csv file"
+        git remote set-url origin https://$GH_TOKEN@github.com/akwaed/gas_prices.git
         git push
     - name: Analysing the code with pylint
       run: |
