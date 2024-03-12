@@ -1,8 +1,8 @@
-import requests
-import json
 import re
-import pandas as pd
+import requests
 from datetime import datetime
+import json
+import pandas as pd
 
 # Function to fetch station data from GasBuddy website
 def fetch_station_data(url):
@@ -65,8 +65,8 @@ def update_logger_csv(data):
     logger.to_csv("./Data/logger.csv", index=False)
 
 # URL of the GasBuddy station
-url = "https://www.gasbuddy.com/station/87143"
-station_data = fetch_station_data(url)
+URL = "https://www.gasbuddy.com/station/87143"
+station_data = fetch_station_data(URL)
 
 
 if station_data:
