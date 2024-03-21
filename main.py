@@ -83,3 +83,5 @@ if station_data and station_data2:
     update_logger_csv(sams_club)
     update_station_info_csv(sams_club)
     print("Data updated successfully.")
+    print("Station info and logger CSVs updated.")
+
